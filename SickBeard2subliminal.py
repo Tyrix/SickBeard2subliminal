@@ -25,6 +25,10 @@ CACHE_DIR = "C:\\change\\your\\path_pls\\"
 logging.basicConfig(filename=LOGFILE, format="%(asctime)s -\
                     %(levelname)s:%(message)s", level=logging.DEBUG)
 
+if len(sys.argv) < 2:
+    logging.info('Too few arguments. Please let SickBeard call this script.')
+    sys.exit()
+
 fileName = os.path.basename(sys.argv[2])
 filePath = os.path.split(sys.argv[1])[0] + "\\" + fileName
 
